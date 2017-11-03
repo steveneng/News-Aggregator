@@ -25,6 +25,9 @@ html,body {
     transition: ease .25s;
 }
 
+.burger{
+    display: none;
+}
 
 @media (max-width:630px) {
     .media{
@@ -33,5 +36,11 @@ html,body {
     .image, .is-128x128{
         width: 100% !important;
         height: auto !important;
+    }
+    .source{
+        display: none;
+    }
+    .burger{
+        display: block;
     }
 }
