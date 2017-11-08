@@ -25,6 +25,11 @@ html,body {
     transition: ease .25s;
 }
 
+.author, .time{
+    line-height: 250%;
+}
+
+
 .burger{
     display: none;
 }
@@ -32,6 +37,9 @@ html,body {
 @media (max-width:630px) {
     .media{
         flex-direction: column
+    }
+    .media-left{
+        width: 100% !important;
     }
     .image, .is-128x128{
         width: 100% !important;
@@ -43,4 +51,5 @@ html,body {
     .burger{
         display: block;
     }
+
 }

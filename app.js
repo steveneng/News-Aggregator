@@ -9,11 +9,7 @@ function news(source){ // this module sends an AJAX request to retrieve the news
     )
 }
 
-function cards(title, author, description,link,time,image){ // this module formats the information
-    if(author===null && time==null){
-        author="";
-        time="";
-    }
+function cards(title, author,description,link,time,image){ // this module formats the information
     $(".body").append(
         '<a href="'+link+'" target="_blank"><div class="card"><article class="media">'+
         '<div class="media-left">'+
@@ -24,14 +20,14 @@ function cards(title, author, description,link,time,image){ // this module forma
         '<div class="media-content">'+
             "<strong>"+
                 title+
-            "</strong>"+
-            "<div>"+
-                "- "+author+
+            "</strong>"+"<br>"+
+            "<div class='author'>"+
+            author+
             "</div>"+
             "<div>"+
-                description+
+                "-"+description+
             "</div>"+
-            "<div>"+
+            "<div class='time'>"+
             time+
             "</div>"+
         '</div>'+
