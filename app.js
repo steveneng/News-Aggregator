@@ -38,8 +38,7 @@ function cards(title, author,description,link,time,image){ // this module format
 function selector(){
     $('.navbar-dropdown').delegate('a.navbar-item', 'click', function() {
         var text = $(this).attr("value");
-        $('section').fadeOut('slow');
-        $('.body').fadeOut('fast');
+        $('section,footer,.body').fadeOut('fast');
         $('.body').empty();
         news(text);
         $('.body').hide();
@@ -55,6 +54,19 @@ function selector(){
     })
 }
 
+function listing(){
+    var list=$('a.navbar-item');
+    var listArray=[];
+    Array.prototype.forEach.call(list, function (item) {
+        listArray.push(item.attributes.value.nodeValue);
+        console.log(listArray)
+      });
+      setTimeout(function(){news(
+          listArray[Math.floor(Math.random()*listArray.length)]
+      )},1000)
+}
+
 $(document).ready(function(){
     selector();
+    listing()
 })
